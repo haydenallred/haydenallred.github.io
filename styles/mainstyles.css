@@ -1,0 +1,38 @@
+body {
+    max-width: 650px;
+    min-width: 500px;
+    overflow: visible;
+    margin: auto;
+    color: maroon;
+}
+
+header {
+    height: 50px;
+    color: white;
+    background-color: maroon;
+    border-radius: 10px;
+}
+header h1 {
+    padding-top: 5px;
+    padding-left: 45px;
+}
+
+main {
+    padding-left: 45px;
+    min-height: 100px;
+}
+
+img {
+    padding: 25px;
+    float: right;
+    max-width: 150px;
+}
+
+footer {
+    padding: 5px;
+    min-height: 60px;
+    background-color: maroon;
+    color: white;
+    border-radius: 5px; 
+    text-align: center;
+}
