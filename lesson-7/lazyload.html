@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/lazyload.css">
+    <title>Lazy Load</title>
+</head>
+
+<body>
+<main>   
+    <h1>
+        My Lazy Gallery
+    </h1>
+    <div id="lazyGallery">
+    <picture class= "picture">
+        <img src='images/placeholder.png' data-src='images/disneyland1.jpg' alt='Disneyland Castle' height="400" width="300">
+    </picture>
+    <picture class= "picture">
+        <img src='images/placeholder.png' data-src='images/disneyland2.jpg' alt='Disneyland Castle' height="400" width="300">
+    </picture>
+    <picture class= "picture">
+        <img src='images/placeholder.png' data-src='images/disneyland3.jpeg' alt='Disneyland Castle' height="400" width="300">
+    </picture>
+    <picture class= "picture">
+        <img src='images/placeholder.png' data-src='images/disneyland4.jpg' alt='Disneyland Castle' height="400" width="300">
+    </picture>
+    <picture class= "picture">
+        <img src='images/placeholder.png' data-src='images/disneyland5.jpg' alt='Disneyland Castle' height="400" width="300">
+    </picture>
+    <picture class= "picture" id="simg6">
+        <img src='images/placeholder.png' data-src='images/disneyland6.jpg' alt='Disneyland Castle' height="400" width="300">
+    </picture>
+    </div>
+</main> 
+    <script src="scripts/lazyload.js"></script>
+</body>
+
+</html>

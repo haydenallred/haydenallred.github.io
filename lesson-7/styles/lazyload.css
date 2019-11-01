@@ -1,0 +1,17 @@
+body {
+    margin: auto;
+    text-align: center;
+}
+
+picture img {
+    filter: blur(0em);
+    transition: filter 0.6s;
+    }
+
+picture img[data-src] {
+    filter: blur(0.3em);
+}
+
+#lazyGallery {
+    display:grid;
+}
