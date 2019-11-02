@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preston Weather</title>
+        <meta name="description" content="The weather for Preston, Idaho">
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/small.css">
+        <link rel="stylesheet" type="text/css" href="styles/medium.css">
+        <link rel="stylesheet" type="text/css" href="styles/large.css">
+    </head>
+    <body>
+        <header>
+            <img src="images/freaking-snow-logo.png" alt="Freaking Snow Logo">
+            <div class="header-content">
+                <h1>Freaking Snow</h1>
+                <div id="tagline">You chose to live here.</div>
+            </div>
+        </header>
+        <nav>
+            <ul id="menu">
+                <li id="menu-toggle"><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li>
+                <li><a href="#">Home</a></li>
+                <li class="current-page"><a href="#">Preston</a></li>
+                <li><a href="#">Soda Springs</a></li>
+                <li><a href="#">Fish Haven</a></li>
+                <li><a href="#">Storm Center</a></li>
+                <li><a href="#">Gallery</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Preston</h2>
+            <div class="content">Hero w/ Weather Summary</div>
+            <div class="content">5 Day Summary</div>
+            <div class="content">Article</div>
+            <div class="content">Contact Information</div>
+        </main>
+        <footer>
+            <p>
+                <span class="footer-content">&copy; <span id="copyright-year"></span> Freaking Snow</span>
+                <span class="footer-content"> | Attributions | Hayden Allred |</span>
+                <span class="footer-content" id="last-updated">Last Updated</span>
+            </p>
+        </footer>
+    </body>
+    <script src="scripts/lesson-4.js"></script>
+</html>
