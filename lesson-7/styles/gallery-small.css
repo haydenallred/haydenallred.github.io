@@ -202,8 +202,7 @@ picture img[data-src] {
     align-self: stretch;
     justify-self: center;
     text-align: center;
-    padding: 5x;
-    background-color: rgb(121, 197, 207);
+    background-color: rgb(147, 221, 231);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     border-radius: 0 0 5px 5px;
     width: 300px;
