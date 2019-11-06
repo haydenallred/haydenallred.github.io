@@ -1,0 +1,11 @@
+@media only screen and (min-width: 960px){
+
+    main {
+        max-width: 960px;
+    }
+
+    footer {
+        max-width: 1010px;
+    }
+
+}
