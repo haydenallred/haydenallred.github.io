@@ -1,0 +1,20 @@
+@media only screen and (min-width: 960px){
+
+    main {
+        max-width: 960px;
+    }
+
+    footer {
+        max-width: 1010px;
+    }
+
+    #image-gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .gallery-item:hover {
+        box-shadow: 0 0 20px rgb(68, 68, 68);
+        text-shadow: 1px 1px rgba(68, 68, 68, 0.5);;
+    }
+
+}
