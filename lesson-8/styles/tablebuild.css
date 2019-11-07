@@ -1,0 +1,38 @@
+table, tr, td, th {
+    border: solid 1px lightgray;
+    border-collapse: collapse;
+    padding: 7px 15px;
+    font-family: Ubantu, sans-serif;
+    text-align: center;
+}
+
+td h1 {
+    line-height: 45px;
+    margin: auto;
+}
+
+th h3 {
+    line-height: 30px;
+    margin: auto;
+}
+
+th, .highlighted {
+    background-color: #628ca6;
+    color: white;
+}
+
+thead, tfoot {
+    background-color: #7fb9c2;
+}
+
+tfoot {
+    font-size: 13px;
+}
+
+tbody tr {
+    background-color: #e7f0ed;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e7ffed;
+}
