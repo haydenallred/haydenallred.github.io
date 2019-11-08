@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 table, tr, td, th {
     border: solid 1px lightgray;
     border-collapse: collapse;
     padding: 7px 15px;
-    font-family: Ubantu, sans-serif;
+    font-family: Ubuntu, sans-serif;
     text-align: center;
 }
 
