@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
+table {
+    box-shadow: #628ca6 10px 10px 10px;
+}
+
 table, tr, td, th {
     border: solid 1px lightgray;
     border-collapse: collapse;
