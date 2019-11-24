@@ -11,48 +11,92 @@
         <link rel="stylesheet" type="text/css" href="styles/large.css">
     </head>
     <body>
+        <div id="alert">
+                <p>Saturday = Preston Pancakes in the Park!  9:00 a.m. Saturday at the city park pavilion.</p>
+        </div>
         <header>
             <img src="images/freaking-snow-logo.png" alt="Freaking Snow Logo">
             <div class="header-content">
                 <h1>Freaking Snow</h1>
                 <div id="tagline">You chose to live here.</div>
             </div>
-            <script src="scripts/cards.js"></script>
         </header>
         <nav>
             <ul id="menu">
                 <li id="menu-toggle"><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li>
-                <li class="current-page"><a href="#">Home</a></li>
-                <li><a href="../lesson-10/preston-10.html">Preston</a></li>
+                <li><a href="../lesson-9/index.html">Home</a></li>
+                <li class="current-page"><a href="#">Preston</a></li>
                 <li><a href="#">Soda Springs</a></li>
                 <li><a href="#">Fish Haven</a></li>
-                <li><a href="../lesson-8/stormcenter.html">Storm Center</a></li>
+                <li><a href="#">Storm Center</a></li>
                 <li><a href="../lesson-7/gallery-7.html">Gallery</a></li>
             </ul>
         </nav>
         <main>
-            <h2>Homepage</h2>
-            <div class="cards" id="cards"></div>
+            <h2>Preston</h2>
+            <div class="content hero">
+                <picture>
+                    <source media="(min-width: 960px)" srcset="images/hero-large.jpeg">
+                    <source media="(min-width: 640px)" srcset="images/hero-medium.jpeg">
+                    <img src="images/hero-small.jpeg" alt="Sample hero image" style="width:100%;">
+                </picture>
+                <section class="weather-summary">
+                    <h3>Weather Summary</h3>
+                    <p>Overview: <span id="currently">N/A</span><br>
+                        Current: <span id="current-temp">0</span>&#176;F<br>
+                        High: <span id="high-temp">0</span>&#176;F<br>
+                        Wind Chill: <span id="wind-chill">N/A</span>&#176;F<br>
+                        Humidity: <span id="humidity">0</span>%<br>
+                        Wind Speed: <span id="wind-speed">0</span> mph</p>
+                </section>
+            </div>
+            <div class="content summary">
+                <h2>5-Day Forecast</h2>
+                <table>
+                    <tr>
+                        <th><span id="one-day"></span></th>
+                        <th><span id="two-day"></span></th>
+                        <th><span id="three-day"></span></th>
+                        <th><span id="four-day"></span></th>
+                        <th><span id="five-day"></span></th>
+                    </tr>
+                    <tr>
+                        <td class="forecast-cell"></td>
+                        <td class="forecast-cell"></td>
+                        <td class="forecast-cell"></td>
+                        <td class="forecast-cell"></td>
+                        <td class="forecast-cell"></td>
+                    </tr>
+                </table>
+            </div>
             <div class="content content-article">
-                <img src="images/napoleon-meme.jpg"> 
-                <h2>Article Title</h2>
+                <img src="images/napoleon-meme.jpg" alt="Napoleon Dynamite meme"> 
+                <h3>Article Title</h3>
                 <div class="author">by Haydey Poo</div>   
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus orci a orci euismod aliquam. Curabitur interdum risus eget dolor commodo, at tincidunt quam sagittis. Integer purus nibh, bibendum ac velit eu, hendrerit lacinia nisl. Nulla congue consectetur sem non fringilla. Integer condimentum porta aliquam. Maecenas enim risus, aliquam vel est et, congue tincidunt metus. Nunc interdum vulputate neque ut interdum. Curabitur auctor tincidunt massa quis cursus.</p>
                 <p>Nam non tristique ipsum, vehicula lacinia dolor. Nulla scelerisque velit dolor, non gravida erat placerat at. Cras risus neque, iaculis sit amet iaculis vitae, laoreet quis ante. In accumsan, ante viverra finibus porttitor, ligula neque accumsan enim, sit amet pulvinar nunc lorem ut nulla. Curabitur feugiat at purus vel gravida. Morbi vitae dapibus est. Vivamus vestibulum, lectus vel pulvinar finibus, lectus nisl varius metus, et rutrum lectus ligula vitae tortor. Sed ac sapien quam. Nulla sit amet arcu enim. Fusce ornare facilisis arcu, et finibus tellus sollicitudin non. Nulla in tortor mollis, egestas elit vel, bibendum lectus. Phasellus ac odio at sapien interdum vestibulum in in purus.</p>
             </div>
-            <div class="wireframes">
-                <p>Wireframes created through Moqups can be found <a href="https://app.moqups.com/Ws8TasmEec/view/page/ad64222d5" target="_blank">here</a>.</p>
+            <div class="content contact">
+                <img src="images/preston-map.png" alt="Map of the town of Preston">
+                <div>
+                    <p>Freaking Snow <br>
+                        125 E 2nd S <br>
+                        Rexburg, ID, 83440 </p>
+                        <p>801-101-8303 <br>
+                        contact@freakingsnow.com</p>
+                </div>
             </div>
         </main>
         <footer>
             <p>
                 <span class="footer-content">&copy; <span id="copyright-year"></span> Freaking Snow</span>
-                <span class="footer-content"> | Attributions | Hayden Allred |</span>
-                <span class="footer-content" id="last-updated">Last Updated</span>
+                <span class="footer-content"> | Attributions | Hayden Allred | </span>
+                <span class="footer-content" id="last-updated"></span>
+                <span class="footer-content"> | Weather Data Courtesy of <a href="https://openweathermap.org/">Open Weather Map</a></span>
             </p>
         </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script src="scripts/homepage.js"></script>
+        <script src="scripts/lesson-10.js"></script>
         <script>
             WebFont.load({
                 google: {
