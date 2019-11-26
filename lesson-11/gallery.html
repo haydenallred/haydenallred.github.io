@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preston Weather</title>
+        <meta name="description" content="The weather for Preston, Idaho">
+        <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+        <link rel="stylesheet" type="text/css" href="styles/small.css">
+        <link rel="stylesheet" type="text/css" href="styles/medium.css">
+        <link rel="stylesheet" type="text/css" href="styles/large.css">
+    </head>
+    <body>
+        <header>
+            <img src="images/freaking-snow-logo.png" alt="Freaking Snow Logo">
+            <div class="header-content">
+                <h1>Freaking Snow</h1>
+                <div id="tagline">You chose to live here.</div>
+            </div>
+        </header>
+        <nav>
+            <ul id="menu">
+                <li id="menu-toggle"><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="preston.html">Preston</a></li>
+                <li><a href="#">Soda Springs</a></li>
+                <li><a href="#">Fish Haven</a></li>
+                <li><a href="stormcenter.html">Storm Center</a></li>
+                <li class="current-page"><a href="#">Gallery</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Weather Gallery</h2>
+            <div id="image-gallery">
+                <div class="gallery-item">
+                    <picture class="grid-picture">
+                        <img src="images/placeholder.jpg"
+                        data-src="images/gallery1.jpg"
+                        alt="Car on snowy highway">
+                    </picture>
+                    <p>Highways are very slick from snowstorm.</p>
+                </div>
+                <div class="gallery-item">
+                    <picture class="grid-picture">
+                        <img src="images/placeholder.jpg"
+                        data-src="images/gallery2.jpg"
+                        alt="Cars driving on snowy road">
+                    </picture>
+                    <p>Road markings are covered.</p>
+                </div>
+                <div class="gallery-item">
+                    <picture class="grid-picture">
+                        <img src="images/placeholder.jpg"
+                        data-src="images/gallery3.jpg"
+                        alt="Two animals on snowy hill">
+                    </picture>
+                    <p>Animals are embracing the temperatures.</p>
+                </div>
+                <div class="gallery-item">
+                    <picture class="grid-picture">
+                        <img src="images/placeholder.jpg"
+                        data-src="images/gallery4.jpg"
+                        alt="Snowplow plowing snow">
+                    </picture>
+                    <p>Snowplows are currently active.</p>
+                </div>
+                <div class="gallery-item">
+                    <picture class="grid-picture">
+                        <img src="images/placeholder.jpg"
+                        data-src="images/gallery5.jpg"
+                        alt="snow-covered trees">
+                    </picture>
+                    <p>Trees are completely covered in snow.</p>
+                </div>
+                <div class="gallery-item">
+                    <picture class="grid-picture">
+                        <img src="images/placeholder.jpg"
+                        data-src="images/gallery6.jpg"
+                        alt="Two people walking in the snow">
+                    </picture>
+                    <p>Be sure to dress warm!</p>
+                </div>
+                <div class="gallery-item">
+                    <picture class="grid-picture">
+                        <img src="images/placeholder.jpg"
+                        data-src="images/gallery7.jpg"
+                        alt="USPS vehicle in the snow">
+                    </picture>
+                    <p>There may be delays in deliveries.</p>
+                </div>
+                <div class="gallery-item">
+                    <picture class="grid-picture">
+                        <img src="images/placeholder.jpg"
+                        data-src="images/gallery8.jpg"
+                        alt="police car in the snow">
+                    </picture>
+                    <p>First responders are very busy.</p>
+                </div>
+                <div class="gallery-item">
+                    <picture class="grid-picture">
+                        <img src="images/placeholder.jpg"
+                        data-src="images/gallery9.jpg"
+                        alt="Many cars on a snowy road">
+                    </picture>
+                    <p>Please drive carefully!</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>
+                <span class="footer-content">&copy; <span id="copyright-year"></span> Freaking Snow</span>
+                <span class="footer-content"> | Attributions | Hayden Allred |</span>
+                <span class="footer-content" id="last-updated">Last Updated</span>
+            </p>
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script src="scripts/lesson-6.js"></script>
+        <script src="scripts/windchill.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                families: [
+                    'Yeon Sung',
+                    'Titillium Web'
+                    ]
+                }
+            });
+        </script>
+        <script src="scripts/lazyload.js"></script>
+    </body>
+</html>
