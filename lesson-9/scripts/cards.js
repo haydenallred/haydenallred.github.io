@@ -7,7 +7,7 @@ fetch(requestURL) .then(function (response){
     //console.table(jsonObject);
 
     let towns = jsonObject["towns"];
-    console.log(towns);
+    //console.log(towns);
 
     for(let i = 0; i < towns.length; i++) {
         let name = towns[i].name;

@@ -13,7 +13,7 @@
         text-align: center;
     }
 
-    .cards article {
+    .cards article, .cards article:nth-child(even) {
         flex-direction: column;
         max-width: 300px;
     }
