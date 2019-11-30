@@ -23,8 +23,8 @@
                 <li id="menu-toggle"><a href="#" onclick="toggleMenu()">&#9776; Menu</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="preston.html">Preston</a></li>
-                <li><a href="#">Soda Springs</a></li>
-                <li><a href="#">Fish Haven</a></li>
+                <li><a href="soda-springs.html">Soda Springs</a></li>
+                <li><a href="fish-haven.html">Fish Haven</a></li>
                 <li class="current-page"><a href="#">Storm Center</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
             </ul>
@@ -50,13 +50,14 @@
                         <option value="Hail">
                         <option value="Tornado">
                     </datalist>
-                    <label class="label-line">Severity: <span id="storm-rating">5 </span><input id="storm-rating-input" type="range" min=0 max=10 value=5 name="severity" onchange="adjustSeverityValue(this.value)"></label>
-                    <label class="label-line">Region <input list="storm-regions" name="storm-region" placeholder="Select A Region"></select></label>
-                    <datalist id="storm-regions">
-                        <option value="Preston">
-                        <option value="Soda Springs">
-                        <option value="Fish Haven">
-                    </datalist>
+                    <label class="label-line">Severity: <span id="storm-rating">5 </span><br><input id="storm-rating-input" type="range" min=0 max=10 value=5 name="severity" onchange="adjustSeverityValue(this.value)"></label>
+                    <label class="label-line">Region <select name="storm-region"></label>
+                        <option selected disabled>Select a Region</option>
+                        <option value="Preston">Preston</option>
+                        <option value="Soda Springs">Soda Springs</option>
+                        <option value="Fish Haven">Fish Haven</option>
+                        </select>
+                    
                     <div>Are you in any danger?</div>
                     <label class="label-line"><input type="radio" name="danger" value="yes"> Yes</label>
                     <label class="label-line"><input type="radio" name="danger" value="maybe"> Maybe</label>
@@ -74,7 +75,7 @@
             </p>
         </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script src="scripts/lesson-8.js"></script>
+        <script src="scripts/stormcenter.js"></script>
         <script>
             WebFont.load({
                 google: {

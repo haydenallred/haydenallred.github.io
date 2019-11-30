@@ -217,7 +217,6 @@ picture img[data-src] {
 	font-style: italic
 }
 
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Yeon+Sung&display=swap');
 header {
 	background-color: #357fe0;
 	display: flex;
@@ -448,7 +447,6 @@ textarea {
 	background-color: #2860aa
 }
 
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Yeon+Sung&display=swap');
 header {
 	background-color: #357fe0;
 	display: flex;

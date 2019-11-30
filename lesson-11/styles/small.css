@@ -217,7 +217,6 @@ picture img[data-src] {
 	font-style: italic
 }
 
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Yeon+Sung&display=swap');
 header {
 	background-color: #357fe0;
 	display: flex;
@@ -448,7 +447,6 @@ textarea {
 	background-color: #2860aa
 }
 
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Yeon+Sung&display=swap');
 header {
 	background-color: #357fe0;
 	display: flex;
@@ -482,7 +480,7 @@ header {
 	align-content: stretch;
 	align-items: center;
 	padding-top: 10px;
-	background-color: darkgray
+	background-color: rgb(169, 169, 169)
 }
 
 .home-content {
@@ -668,7 +666,6 @@ body {
 	font-family: 'Titillium Web', sans-serif
 }
 
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Yeon+Sung&display=swap');
 header {
 	background-color: #357fe0;
 	display: flex;
@@ -832,6 +829,20 @@ footer {
 
 .forecast-cell img {
     box-shadow: none;
+}
+
+.upcoming-events {
+	max-width: 300px;
+	margin: auto;
+	background-color: darkgray;
+	border: 2px solid gray;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+.upcoming-events h3 {
+	text-align: center;
+	text-decoration: underline;
 }
 
 h2 {
