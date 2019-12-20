@@ -1,0 +1,154 @@
+/* COLORS
+Black
+Dark Green: #042d00
+Dark Teal: #1e4f43
+Light Pale Blue: #476a6f
+White */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* -- HEADER -- */
+
+header {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* -- NAVIGATION -- */
+
+nav {
+    background-color: #8eb8be;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.navigation,
+.subNav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+}
+
+.navigation li,
+.subNav {
+    display: none;
+}
+
+#menu {
+    display: block;
+}
+
+.responsive li,
+.subResponsive {
+    display: block;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.8rem 2%;
+    text-decoration: none;
+    color: #23292e;
+    border-top: 1px solid rgba(0, 0, 0, 0.3)
+}
+
+.navigation li a.active {
+    color: #3e4044;
+    background-color: #8eb8be;
+}
+
+.navigation .subResponsive {
+    background-color: #8eb8be;
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* -- MAIN CONTENT -- */
+
+.main-content {
+    margin: 25px;
+    border: #1e4f43 solid 2px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#main-contact {
+    text-align: center;
+}
+
+.extra-hidden-facts {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+iframe {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+    justify-content: center;
+    display: flex;
+}
+
+.fit-picture {
+    max-width: 100%;
+    display: flex;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.button {
+    background-color: #476a6f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin: auto;
+    display: flex;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+
+/* -- FOOTER -- */
+
+footer {
+    background-color: #8eb8be;
+    text-align: center;
+    padding: 5px;
+    margin-top: 25px;
+    width: 100%;
+    max-height: 50px;
+}

@@ -1,0 +1,30 @@
+@media only screen and (min-width: 960px) {
+
+/* -- NAVIGATION -- */
+
+/* -- MAIN CONTENT -- */
+
+.main-content {
+    overflow: auto;
+}
+
+#main-overview-image {
+    float: left;
+}
+
+.fit-picture {
+    max-width: 48%;
+    width: 48%;
+    min-width: 48%;
+}
+
+.extra-hidden-facts {
+    display: flex;
+}
+
+#main-overview-right-content {
+    max-width: 48%;
+    float: right;
+}
+
+}
