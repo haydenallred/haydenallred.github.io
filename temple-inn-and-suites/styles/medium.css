@@ -41,11 +41,23 @@
 
 /* -- MAIN CONTENT -- */
 
-.main-content {
+.main-content, .services-content {
     overflow: auto;
 }
 
-#main-overview-image {
+.reception-left {
+    float: left;
+    padding: none;
+    max-width: 48%;
+}
+
+.reception-right {
+    float: right;
+    padding: none;
+    max-width: 48%;
+}
+
+#main-overview-image, #services-overview-image {
     float: left;
 }
 
@@ -57,7 +69,7 @@
     display: none;
 }
 
-#main-overview-right-content {
+#main-overview-right-content, #services-overview-right-content {
     max-width: 48%;
     float: right;
 }

@@ -4,11 +4,11 @@
 
 /* -- MAIN CONTENT -- */
 
-.main-content {
+.main-content, .services-content {
     overflow: auto;
 }
 
-#main-overview-image {
+#main-overview-image, #services-overview-right-content {
     float: left;
 }
 
@@ -18,13 +18,40 @@
     min-width: 48%;
 }
 
+.reception-left {
+    float: left;
+    padding: 25px;
+}
+
+.reception-right {
+    float: right;
+    padding: 25px;
+}
+
 .extra-hidden-facts {
     display: flex;
 }
 
-#main-overview-right-content {
+#main-overview-right-content, #services-overview-right-content {
     max-width: 48%;
     float: right;
+}
+
+#navigation-content {
+    float: left;
+    width: 67%;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+#main-contact {
+    float: right;
+    text-align: center;
+    margin: auto;
+    width: 33%;
+    padding-top: 100px;
 }
 
 }
