@@ -43,8 +43,8 @@ nav {
 .navigation,
 .subNav {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: none;
+    margin: none;
     display: flex;
     flex-flow: column;
 }
@@ -171,7 +171,7 @@ iframe {
     padding-left: 25px;
     padding-bottom: 15px;
     line-height: 1.5em;
-    font-size: 1.3;
+    font-size: 1.3em;
 }
 
 /* -- FORM -- */
