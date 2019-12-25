@@ -1,7 +1,7 @@
 
 body {
     padding-top: 35px;
-    max-width: 480px;
+    max-width: 640px;
     margin: auto;
     display: flex;
 }
@@ -10,6 +10,7 @@ body {
     margin: auto;
     text-align: center;
     justify-content: center;
+    width: 100%;
 }
 
 .buttons {
@@ -23,8 +24,9 @@ body {
     padding: 20px;
 }
 
-h2 {
+h1 {
     text-align: center;
+    font-size: 50px;
 }
 
 .trait {
@@ -38,9 +40,10 @@ h2 {
 }
 
 p {
+    width: 80%;
     text-align: center;
     margin: auto;
-    font-size: larger;
+    font-size: xx-large;
 }
 
 button {
@@ -51,7 +54,7 @@ button {
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 20px;
+    font-size: xx-large;
     margin: auto;
-    width: 75%;
+    width: 80%;
   }
