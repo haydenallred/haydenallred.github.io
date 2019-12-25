@@ -22,6 +22,8 @@ function setUpElements() {
 
   document.getElementById("trait").innerHTML = traits[currentTrait].trait;
   document.getElementById("definition").innerHTML = traits[currentTrait].definition;
+  document.getElementById("button1").innerHTML = firstCharacter.name;
+  document.getElementById("button2").innerHTML = secondCharacter.name;
 }
 
 function chooseFirstCharacter() { chooseWinner(1); }
