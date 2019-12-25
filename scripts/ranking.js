@@ -19,11 +19,14 @@ var sortedCharacters = {
 collectTraits();
 
 function setUpElements() {
-
   document.getElementById("trait").innerHTML = traits[currentTrait].trait;
   document.getElementById("definition").innerHTML = traits[currentTrait].definition;
   document.getElementById("button1").innerHTML = firstCharacter.name;
   document.getElementById("button2").innerHTML = secondCharacter.name;
+
+  document.getElementById("button1").disabled = false;
+  document.getElementById("button2").disabled = false;
+  document.getElementById("tie").disabled = false;
 }
 
 function chooseFirstWinner() { chooseWinner(1); }
@@ -60,21 +63,26 @@ function chooseWinner(winner) {
     newRating2 = rating2 + k * (0.5 - P2);
   }
 
+  newRating1 = Math.round(newRating1);
+  newRating2 = Math.round(newRating2);
+
   console.log(rating1 + " -> " + newRating1);
   console.log(rating2 + " -> " + newRating2);
 
+
+  chooseNewMatchup();
 }
 
 function chooseSecondCharacter(randomIndex, cList) {
   // create range of choosing the second character
-  let minimum = -3; let maximum = 3;
-  for (let i = 0; i < 3; i++) {
+  let minimum = -4; let maximum = 4;
+  for (let i = 0; i < 4; i++) {
     if (randomIndex + minimum < 0) {
       minimum++;
       maximum++;
     }
   }
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {
     if (randomIndex + maximum > cList.length - 1) {
       maximum--;
       minimum--;
@@ -113,6 +121,12 @@ function chooseSecondCharacter(randomIndex, cList) {
 }
 
 function chooseNewMatchup() {
+
+  // disable elements
+  document.getElementById("button1").disabled = true;
+  document.getElementById("button2").disabled = true;
+  document.getElementById("tie").disabled = true;
+
   firstCharacter = null;
   secondCharacter = null;
 

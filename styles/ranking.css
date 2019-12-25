@@ -33,10 +33,17 @@ h1 {
     color: purple;
 }
 
+#tie {
+    background-color: rgb(112, 0, 0);
+    font-size: 100%;
+    width: 30%;
+}
+
 #definition {
     text-align: center;
     font-style: italic;
     margin: auto;
+    font-size: 80%;
 }
 
 p {
