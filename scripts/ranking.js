@@ -21,7 +21,7 @@ collectTraits();
 function setUpElements() {
 
   document.getElementById("trait").innerHTML = traits[currentTrait].trait;
-  document.getElementById("definition").innerHTML = "Definition: " + traits[currentTrait].definition;
+  document.getElementById("definition").innerHTML = traits[currentTrait].definition;
 }
 
 function chooseFirstCharacter() { chooseWinner(1); }

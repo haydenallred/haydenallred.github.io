@@ -13,6 +13,10 @@ h2 {
     text-align: center;
 }
 
+.trait {
+    color: purple;
+}
+
 #definition {
     text-align: center;
     font-style: italic;
