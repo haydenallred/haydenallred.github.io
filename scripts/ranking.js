@@ -43,8 +43,11 @@ function chooseWinner(winner) {
   let newRating1 = rating1;
   let newRating2 = rating2;
   
-  let P1 = (1.0 / (1.0 + Math.pow(10, ((rating1 - rating2) / 400))));
-  let P2 = (1.0 / (1.0 + Math.pow(10, ((rating2 - rating1) / 400))));
+  let P1 = (1.0 / (1.0 + Math.pow(10, ((rating2 - rating1) / 400))));
+  let P2 = (1.0 / (1.0 + Math.pow(10, ((rating1 - rating2) / 400))));
+
+  console.log("P1: " + P1);
+  console.log("P2: " + P2);
   
   if (winner == 1) {
     // left movie wins
@@ -59,6 +62,7 @@ function chooseWinner(winner) {
   } else if (winner == 0) {
     // tie
     console.log("It's a tie!");
+    k *= 5;
     newRating1 = rating1 + k * (0.5 - P1);
     newRating2 = rating2 + k * (0.5 - P2);
   }
@@ -69,8 +73,40 @@ function chooseWinner(winner) {
   console.log(rating1 + " -> " + newRating1);
   console.log(rating2 + " -> " + newRating2);
 
+  firstCharacter.traits[currentTrait] = newRating1;
+  secondCharacter.traits[currentTrait] = newRating2;
+  console.log(firstCharacter);
+  console.log(secondCharacter);
 
-  chooseNewMatchup();
+  document.getElementById("button1").innerHTML = rating1 + " -> " + newRating1;
+  document.getElementById("button2").innerHTML = rating2 + " -> " + newRating2;
+
+  updateCharacter1(newRating1, newRating2);
+
+}
+
+function updateCharacter1(newRating1, newRating2) {
+  db.collection("character-profiles").doc(firstCharacter.id).set(firstCharacter)
+  .then(function() {
+      console.log("Updated " + firstCharacter.name);
+      updateCharacter2(newRating2);
+  })
+  .catch(function(error) {
+      console.error("Error updating first character: ", error);
+      alert("Error updating first character");
+  });
+}
+
+function updateCharacter2(newRating2) {
+  db.collection("character-profiles").doc(secondCharacter.id).set(secondCharacter)
+  .then(function() {
+      console.log("Updated " + secondCharacter.name);
+      setTimeout(chooseNewMatchup, 1250);
+  })
+  .catch(function(error) {
+      console.error("Error updating second character: ", error);
+      alert("Error updating second character");
+  });
 }
 
 function chooseSecondCharacter(randomIndex, cList) {
@@ -112,10 +148,11 @@ function chooseSecondCharacter(randomIndex, cList) {
       setUpElements();
     } else {
       // doc.data() will be undefined in this case
-      console.log("No document for first character!");
+      console.log("No document for second character!");
     }
     }).catch(function(error) {
-        console.log("Error getting first character:", error);
+        console.log("Error getting second character:", error);
+        alert("Error getting second character");
     }); 
 
 }
@@ -130,7 +167,18 @@ function chooseNewMatchup() {
   firstCharacter = null;
   secondCharacter = null;
 
-  currentTrait = Math.floor(Math.random() * 30);
+  let actuallyRandom = Math.floor(Math.random() * 5)
+  if (actuallyRandom < 3) {
+    // choose an actually random one
+    currentTrait = Math.floor(Math.random() * 30);
+    console.log("Actual random trait");
+  } else {
+    var randomTraits = [6, 7, 12];
+    var randomTrait = Math.floor(Math.random() * 3);
+    currentTrait = randomTraits[randomTrait];
+    console.log("Pseudo random trait");
+  }
+  
   console.log("Trait: " + traits[currentTrait].trait)
   let cList = pr[currentTrait];
   console.log(cList);
@@ -153,6 +201,7 @@ function chooseNewMatchup() {
       }
   }).catch(function(error) {
       console.log("Error getting first character:", error);
+      alert("Error getting first character");
   });
 }
 
@@ -174,7 +223,8 @@ function collectCharacters() {
         console.log("No such document!");
       }
   }).catch(function(error) {
-      console.log("Error getting document:", error);
+      console.log("Error getting characters:", error);
+      alert("Error getting characters");
   });
   
 }
@@ -193,5 +243,6 @@ function collectTraits() {
       }
   }).catch(function(error) {
       console.log("Error getting document:", error);
+      alert("Error getting traits");
   });
 }
