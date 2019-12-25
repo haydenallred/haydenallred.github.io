@@ -129,6 +129,7 @@ function assignRankings() {
   db.collection("data").doc("percentile-rankings").set(data)
     .then(function() {
       console.log("Updated percentile rankings");
+      alert("Updated Percentile Rankings!");
     }) .catch (function(error) {
       console.error("Error writing percentile rankings document: ", error);
     });
@@ -157,6 +158,7 @@ function createStaticReferenceOfCharacters() {
           })
           .then(function() {
               console.log("created");
+              alert("Static Character Information Created");
           })
           .catch(function(error) {
               console.error("Error writing document: ", error);
