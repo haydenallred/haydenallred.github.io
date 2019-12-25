@@ -1,0 +1,9 @@
+
+body {
+    max-width: 480px;
+    margin: auto;
+}
+
+#definition {
+    font-style: italic;
+}

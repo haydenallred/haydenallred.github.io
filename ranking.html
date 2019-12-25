@@ -2,28 +2,20 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Disney Character Quiz Utilities</title>
-  <!-- <link rel="stylesheet" href="./style.css"> -->
+  <link rel="stylesheet" href="styles/ranking.css">
+  <title>Disney Character Quiz Ranking</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
 </head>
-<body
-  <br><br><br>
-  
-  <button type="button" onclick="sortCharacters()" style="font-size: large;">
-    Create Percentile Rankings for Characters
-  </button>
-  
-  <br><br><br>
-  
-  <button type="button" onclick="createStaticReferenceOfCharacters()" style="font-size: large;">
-    Create Static Reference of Characters
-  </button>
+<body>
+
+  <div>
+    <h2>Who is more <span id="trait">trait</span>?</h2>
+    <p id="definition">definition</p>
+  </div>
 
 <script>
-  // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyC9QKMq7eJGxcRC8C3a8hQ6Co4LRJ8N5W0",
     authDomain: "character-quiz-ab120.firebaseapp.com",
@@ -37,10 +29,8 @@
   firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
 </script>
-  
 <script src="scripts/jQuery.js"></script>
 <script src="scripts/lodash.js"></script>
-<script  src="scripts/utilities.js"></script>
-  
+<script  src="scripts/ranking.js"></script>
 </body>
 </html>
