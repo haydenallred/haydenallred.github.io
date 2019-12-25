@@ -1,9 +1,20 @@
 
 body {
+    padding-top: 35px;
     max-width: 480px;
     margin: auto;
 }
 
+#content {
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
 #definition {
+    text-align: center;
     font-style: italic;
+    margin: auto;
 }
