@@ -31,6 +31,9 @@ function collectCharacters() {
 }
 
 function sortCharacters() {
+
+  document.getElementById("button1").disabled = true;
+  document.getElementById("button2").disabled = true;
   
   for (let i = 0; i < 30; i++) {
     let characterSort = _.clone(characters);
@@ -130,6 +133,7 @@ function assignRankings() {
     .then(function() {
       console.log("Updated percentile rankings");
       alert("Updated Percentile Rankings!");
+      showAlert("Updated Percentile Rankings!");
     }) .catch (function(error) {
       console.error("Error writing percentile rankings document: ", error);
     });
@@ -139,6 +143,9 @@ function assignRankings() {
 
 function createStaticReferenceOfCharacters() {
   
+  document.getElementById("button1").disabled = true;
+  document.getElementById("button2").disabled = true;
+
   var index = 0;
   
    db.collection("character-profiles").get().then(function(querySnapshot) {
@@ -158,7 +165,8 @@ function createStaticReferenceOfCharacters() {
           })
           .then(function() {
               console.log("created");
-              alert("Static Character Information Created");
+              alert("Static Character Information Created. Reload Page.");
+              showAlert("Static Character Information Created. Reload Page.");
           })
           .catch(function(error) {
               console.error("Error writing document: ", error);
@@ -167,6 +175,10 @@ function createStaticReferenceOfCharacters() {
       });
   });
   
+}
+
+function showAlert(message) {
+  document.getElementById("alert").innerHTML = message;
 }
 
 /*
