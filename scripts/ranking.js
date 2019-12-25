@@ -36,6 +36,10 @@ function chooseSecondWinner() { chooseWinner(2); }
 function chooseTie() { chooseWinner(0) }
 
 function chooseWinner(winner) {
+
+  document.getElementById("button1").disabled = true;
+  document.getElementById("button2").disabled = true;
+  document.getElementById("tie").disabled = true;
   
   let rating1 = firstEloBefore;
   let rating2 = secondEloBefore;

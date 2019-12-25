@@ -4,6 +4,10 @@ var pr = [];
 var traits = [];
 
 
+date = new Date();
+document.getElementById("currently").innerHTML = "Currently: " + date.toUTCString();
+
+
 collectTraits();
 
 function collectTraits() {
@@ -30,6 +34,7 @@ function collectRankings() {
 
     docRef.get().then(function(doc) {
         if (doc.exists) {
+            document.getElementById("lastUpdated").innerHTML = "Last Updated: " + doc.data().lastUpdated;
             pr = doc.data().data;
             console.log(pr);
             createElements();

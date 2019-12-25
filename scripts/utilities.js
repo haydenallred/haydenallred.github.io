@@ -1,7 +1,6 @@
 
 
 
-
 var characters = [50];
 
 var sortedCharacters = {
@@ -121,8 +120,12 @@ function assignRankings() {
     percentileRankings[i] = currentPR;
   }
   
+  var usaTime = new Date().toLocaleString("en-US", {timeZone: "America/Denver"});
+  date = new Date(usaTime);
+
   var data = {
-    data: []
+    data: [],
+    lastUpdated: date.toUTCString()
   };
   
   for (let i = 0; i < 30; i++) {
