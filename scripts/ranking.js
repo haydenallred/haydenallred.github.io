@@ -26,9 +26,9 @@ function setUpElements() {
   document.getElementById("button2").innerHTML = secondCharacter.name;
 }
 
-function chooseFirstCharacter() { chooseWinner(1); }
+function chooseFirstWinner() { chooseWinner(1); }
 
-function chooseSecondCharacter() { chooseWinner(2); }
+function chooseSecondWinner() { chooseWinner(2); }
 
 function chooseTie() { chooseWinner(0) }
 
