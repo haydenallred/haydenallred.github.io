@@ -113,7 +113,8 @@ function assignRankings() {
         name: sortedCharacters.traits[i][x].name,
         percentile: sortedCharacters.traits[i][x].percentiles[i],
         gender: sortedCharacters.traits[i][x].gender,
-        id: sortedCharacters.traits[i][x].id
+        id: sortedCharacters.traits[i][x].id,
+        elo: sortedCharacters.traits[i][x].traits[i]
       };
       currentPR[x] = character;
     }
