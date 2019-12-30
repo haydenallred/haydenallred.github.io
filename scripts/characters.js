@@ -1,11 +1,7 @@
 
 
-var pr = [];
 var traits = [];
-
-
-date = new Date();
-document.getElementById("currently").innerHTML = "Currently: " + date.toUTCString();
+var characters = [];
 
 
 collectTraits();
@@ -17,8 +13,8 @@ function collectTraits() {
     docRef.get().then(function(doc) {
         if (doc.exists) {
             traits = doc.data();
-            console.log(traits);
-            collectRankings();
+            //console.log(traits);
+            collectCharacters();
         } else {
             console.log("No document for percentile rankings!");
         }
@@ -28,109 +24,89 @@ function collectTraits() {
     });
 }
 
-function collectRankings() {
-    // get reference of rankings
-    var docRef = db.collection("data").doc("percentile-rankings");
+function collectCharacters() {
 
-    docRef.get().then(function(doc) {
-        if (doc.exists) {
-            document.getElementById("lastUpdated").innerHTML = "Last Updated: " + doc.data().lastUpdated;
-            pr = doc.data().data;
-            console.log(pr);
-            createElements();
-        } else {
-            console.log("No document for percentile rankings!");
-        }
-    })
-    .catch(function(error) {
-        console.log("Error getting percentile rankings:", error);
-        alert("Error getting percentile rankings!");
+    let characterReference = db.collection("data").doc("temp-static-characters");
+    characterReference.get().then(function(doc) {
+        characters = _.clone(doc.data().data);
+        createElements();
+    }).catch(function(error) {
+        console.log("Error gathering characters!");
     });
 }
 
 function createElements() {
-    var results = document.getElementById("results");
-    var links = document.getElementById("links");
+    
+    let characterSelect = document.getElementById("characterSelector");
 
-    for (let i = 0; i < 30; i++) {
-        let section = document.createElement('section');
-        let h2 = document.createElement('h2');
-        h2.innerHTML = traits.traits[i].trait;
-        h2.setAttribute('id', traits.traits[i].trait);
-        section.appendChild(h2);
-
-        let p = document.createElement('p');
-        let link = document.createElement('a');
-        link.setAttribute('href', "#" + traits.traits[i].trait);
-        link.innerHTML = traits.traits[i].trait;
-        p.appendChild(link);
-        links.appendChild(p);
-
-        let list = document.createElement('ul');
-        for (let x = 0; x < pr[i].data.length; x++) {
-            let text = pr[i].data[x].name + ": " + pr[i].data[x].percentile;
-            let item = document.createElement('li');
-            item.innerHTML = text;
-
-            let textbox = document.createElement('input');
-            textbox.setAttribute('type', 'text');
-            textbox.setAttribute('name', traits.traits[i].trait + pr[i].data[x].name);
-            textbox.setAttribute('id', traits.traits[i].trait + pr[i].data[x].name);
-            textbox.setAttribute('placeholder', pr[i].data[x].elo);
-            item.appendChild(textbox);
-
-            //console.log(traits.traits[i].trait + ": " + pr[i].data[x].name + " (" + pr[i].data[x].elo + ")");
-
-            list.appendChild(item);
-        }
-
-        section.appendChild(list);
-
-        let saveButton = document.createElement('button');
-        saveButton.setAttribute('type', 'button');
-        saveButton.innerHTML = "Save " + traits.traits[i].trait + " elo ratings";
-        saveButton.setAttribute('onclick', "saveChanges(" + i + ")");
-        section.appendChild(saveButton);
-
-        results.appendChild(section);
+    for (let i = 0; i < characters.length; i++) {
+        // <option value="choose" selected="">Choose a character</option>
+        let option = document.createElement('option');
+        option.value = characters[i].name;
+        option.innerHTML = characters[i].name;
+        characterSelect.appendChild(option);
     }
+
+    sortSelect(characterSelect);
+    changeCharacter();
+
 }
 
-function saveChanges(i) {
+function sortSelect(selElem) {
+    var tmpAry = new Array();
+    for (var i=0;i<selElem.options.length;i++) {
+        tmpAry[i] = new Array();
+        tmpAry[i][0] = selElem.options[i].text;
+        tmpAry[i][1] = selElem.options[i].value;
+    }
+    tmpAry.sort();
+    while (selElem.options.length > 0) {
+        selElem.options[0] = null;
+    }
+    for (var i=0;i<tmpAry.length;i++) {
+        var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+        selElem.options[i] = op;
+    }
+    return;
+}
 
-    for (let x = 0; x < pr[i].data.length; x++) {
-        //console.log(traits.traits[i].trait + ": " + pr[i].data[x].name + " (" + pr[i].data[x].elo + ")");
-        let textBox = document.getElementById(traits.traits[i].trait + pr[i].data[x].name);
-        if (textBox.value != "") {
-            let id = pr[i].data[x].id;
-            
-            var docRef = db.collection("character-profiles").doc(id);
+function changeCharacter() {
+    let characterSelect = document.getElementById("characterSelector");
+    let name = characterSelect.options[characterSelect.selectedIndex].text;
+    let traitList = document.getElementById("traitList");
+    console.log(name);
+    traitList.innerHTML = "";
 
-            docRef.get().then(function(doc) {
-                if (doc.exists) {
-                    let character = _.clone(doc.data());
-                    character.traits[i] = parseInt(textBox.value);
-                    updateCharacter(character);
-                } else {
-                    console.log("No document for character!");
+    for (let x = 0; x < characters.length; x++) {
+        if (characters[x].name == name) {
+            for (let i = 0; i < traits.traits.length; i++) {
+                console.log(traits.traits[i].trait + ": " + characters[x].percentiles[i]);
+                
+                let trait = traits.traits[i].trait;
+                let percentile = characters[x].percentiles[i];
+                let item = document.createElement('li');
+                item.innerHTML = trait + ": " + percentile;
+
+                let className = "regular-item";
+                
+                if (percentile >= 80 || percentile <= 20) {
+                    className = "extreme";
                 }
-            })
-            .catch(function(error) {
-                console.log("Error getting character data:", error);
-                alert("Error getting character data!");
-            });
 
+                if (percentile >= 90 || percentile <= 10) {
+                    className = "most-extreme";
+                }
+
+                if (percentile <= 1 || percentile >= 99) {
+                    className = "definitive";
+                }
+
+                item.classList.add(className);
+                
+                traitList.appendChild(item);
+            }
+            break;
         }
     }
-}
 
-function updateCharacter(character) {
-    db.collection("character-profiles").doc(character.id).set(character)
-            .then(function() {
-                console.log("Updated " + character.name)
-            })
-            .catch(function(error) {
-                console.error("Error updating character: ", error);
-                alert("Error updating character");
-            });
 }

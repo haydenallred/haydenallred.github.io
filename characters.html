@@ -3,23 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Disney Character Quiz Percentiles</title>
-  <link rel="stylesheet" href="styles/percentiles.css">
+  <link rel="stylesheet" href="styles/characters.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
 </head>
 <body>
-
-  <p id="currently">Currently: </p>
-  <p id="lastUpdated">Last Updated: </p>
-
-  <div id="links">
-    
-  </div>
   
-  <div id="results">
+  <div id="content">
 
+    <select id="characterSelector" onchange="changeCharacter()"></select>
+    <ul id="traitList"></ul>
   </div>
 
 <script>

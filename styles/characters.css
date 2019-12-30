@@ -1,0 +1,41 @@
+ul {
+    column-count: 2;
+    list-style-type: none;
+}
+
+body {
+    font-size: larger;
+}
+
+select {
+    font-size: large;
+    margin: auto;
+}
+
+#content {
+    margin-top: 100px;
+    padding-top: 50px;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.regular-item {
+    color: rgb(94, 94, 94);
+}
+
+.definitive {
+    color: rgb(0, 78, 0);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.most-extreme {
+    color: rgb(117, 0, 117);
+    text-transform: uppercase;
+}
+
+.extreme {
+    color: rgb(0, 0, 182);
+    text-transform: uppercase;
+}

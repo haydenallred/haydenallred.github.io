@@ -158,26 +158,24 @@ function createStaticReferenceOfCharacters() {
           name: doc.data().name,
           gender: doc.data().gender,
           traits: doc.data().traits,
-          percentiles: [],
-          ranks: [],
+          percentiles: doc.data().percentiles,
+          ranks: doc.data().ranks,
           id: doc.id
         }; //doc.data();
         index++;
-        if (index == 50) {
-          db.collection("data").doc("temp-static-characters").set({
-            data: characters
-          })
-          .then(function() {
-              console.log("created");
-              alert("Static Character Information Created. Reload Page.");
-              showAlert("Static Character Information Created. Reload Page.");
-          })
-          .catch(function(error) {
-              console.error("Error writing document: ", error);
-          });
-        }
       });
-  });
+      db.collection("data").doc("temp-static-characters").set({
+        data: characters
+      })
+      .then(function() {
+          console.log("created");
+          alert("Static Character Information Created. Reload Page.");
+          showAlert("Static Character Information Created. Reload Page.");
+      })
+      .catch(function(error) {
+          console.error("Error writing document: ", error);
+      });
+    });
   
 }
 
