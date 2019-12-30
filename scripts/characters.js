@@ -74,13 +74,13 @@ function changeCharacter() {
     let characterSelect = document.getElementById("characterSelector");
     let name = characterSelect.options[characterSelect.selectedIndex].text;
     let traitList = document.getElementById("traitList");
-    console.log(name);
+    //console.log(name);
     traitList.innerHTML = "";
 
     for (let x = 0; x < characters.length; x++) {
         if (characters[x].name == name) {
             for (let i = 0; i < traits.traits.length; i++) {
-                console.log(traits.traits[i].trait + ": " + characters[x].percentiles[i]);
+                //console.log(traits.traits[i].trait + ": " + characters[x].percentiles[i]);
                 
                 let trait = traits.traits[i].trait;
                 let percentile = characters[x].percentiles[i];
@@ -88,7 +88,7 @@ function changeCharacter() {
                 item.innerHTML = trait + ": " + percentile;
 
                 let className = "regular-item";
-                
+
                 if (percentile >= 80 || percentile <= 20) {
                     className = "extreme";
                 }
