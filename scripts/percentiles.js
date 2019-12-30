@@ -98,12 +98,14 @@ function createElements() {
 
 function saveChanges(i) {
 
+    let count = 0;
+
     for (let x = 0; x < pr[i].data.length; x++) {
         //console.log(traits.traits[i].trait + ": " + pr[i].data[x].name + " (" + pr[i].data[x].elo + ")");
         let textBox = document.getElementById(traits.traits[i].trait + pr[i].data[x].name);
         if (textBox.value != "") {
             let id = pr[i].data[x].id;
-            
+            count++;
             var docRef = db.collection("character-profiles").doc(id);
 
             docRef.get().then(function(doc) {
@@ -119,9 +121,10 @@ function saveChanges(i) {
                 console.log("Error getting character data:", error);
                 alert("Error getting character data!");
             });
-
         }
     }
+
+    alert("Updated " + count + " character(s)");
 }
 
 function updateCharacter(character) {
