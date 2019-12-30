@@ -97,7 +97,7 @@ function changeCharacter() {
                     className = "most-extreme";
                 }
 
-                if (percentile <= 1 || percentile >= 99) {
+                if (percentile <= 3 || percentile >= 97) {
                     className = "definitive";
                 }
 
