@@ -59,6 +59,10 @@ function createElements() {
         h2.setAttribute('id', traits.traits[i].trait);
         section.appendChild(h2);
 
+        let definition = document.createElement('p');
+        definition.textContent = traits.traits[i].definition;
+        section.appendChild(definition);
+
         let p = document.createElement('p');
         let link = document.createElement('a');
         link.setAttribute('href', "#" + traits.traits[i].trait);
