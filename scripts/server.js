@@ -116,7 +116,7 @@ function calculatePercentile(user) { // single user percentile. This is where th
             }
         }
 
-        let percentileRanking = usersBelow / responses.length;
+        let percentileRanking = usersBelow / (responses.length - 1);
         percentileRanking = Math.round(percentileRanking * 10000) / 100;
 
         user.percentiles[traitIndex] = percentileRanking;
