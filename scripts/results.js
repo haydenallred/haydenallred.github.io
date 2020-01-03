@@ -47,7 +47,7 @@ function createElements(info) {
         let h2 = document.createElement('h2');
         h2.innerHTML = info.matches[i].match + "% " + info.matches[i].characterName;
         let p = document.createElement('p');
-        let text = info.matches[i].nearMatches + " +-5% | Bonus: " + info.matches[i].bonus + "% | Avg Diff: " + info.matches[i].averageDifference + "%";
+        let text = info.matches[i].nearMatches + " +-7% | Bonus: " + info.matches[i].bonus + "% | Avg Diff: " + info.matches[i].averageDifference + "%";
         p.innerHTML = text;
         item.appendChild(h2);
         item.appendChild(p);
@@ -205,8 +205,8 @@ function runAnalysis(user, index) {
             difference = Math.round(difference * 100) / 100;
             totalDifference += difference;
 
-            if (difference <= 5) {
-                // add adjustment for being within 5%
+            if (difference <= 7) {
+                // add adjustment for being within 7%
                 let average = (cValue + uValue) / 2;
                 average = Math.round(average * 100) / 100;
 
