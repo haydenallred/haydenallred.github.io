@@ -7,6 +7,16 @@ var traits;
 
 var results = [];
 
+var maximums = [];
+var maximumsStrings = [];
+var minimums = [];
+var minimumsStrings = [];
+
+for (let i = 0; i < 30; i++) {
+    maximums[i] = 0;
+    minimums[i] = 100;
+}
+
 class matchDetails {
     constructor(characterName, nearMatches, bonus, averageDifference, match, percentiles) {
         this.characterName = characterName;
@@ -159,6 +169,10 @@ function loadResponses() {
             runAnalysis(responses[i], i);
         }
         console.log("Analysis complete!");
+        console.log("Maximums:");
+        console.log(maximumsStrings);
+        console.log("Minimums:");
+        console.log(minimumsStrings);
         sortResults();
         //console.log(results);
     });
@@ -220,6 +234,16 @@ function runAnalysis(user, index) {
                 //console.log("Near bonus on " + traits[traitIndex].trait + ": " + adjustmentValue + " (Average: " + average + ")");
                 nearTraits++;
             }
+
+            if (uValue < minimums[traitIndex]) {
+                minimums[traitIndex] = uValue;
+                minimumsStrings[traitIndex] = traits[traitIndex].trait + ": " + user.name;
+            }
+            if (uValue > maximums[traitIndex]) {
+                maximums[traitIndex] = uValue;
+                maximumsStrings[traitIndex] = traits[traitIndex].trait + ": " + user.name;
+            }
+
         }
         
         nearBonus = Math.round(nearBonus * 100) / 100;
