@@ -12,13 +12,14 @@ li {
     width: 100%;
     margin: auto;
     padding-left: 35px;
-    padding-top: 25px;
+    padding-top: 10px;
+    padding-bottom: 17px;
     height: 80px;
     display: flex;
     text-align: left;
     justify-content: left;
     margin-bottom: 5px;
-    font-size: large;
+    font-size: x-large;
     max-width: 100%;
     color: white;
     text-shadow: 1px 1px rgb(82, 82, 82);
@@ -26,17 +27,26 @@ li {
 
 p {
     margin-left: 80px;
-    padding-top: 40px;
+    margin-top: 20px;
+    padding-top: 35px;
+    text-shadow: none;
 }
 
 body {
     width: 98%;
     margin: none;
     padding-left: 0px;
+    margin-left: none;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .results {
+    padding-left: none;
+    width: 98%;
+    margin-left: 0px;
+}
+
+.content {
     padding-left: none;
     width: 98%;
     margin-left: 0px;

@@ -39,7 +39,8 @@ function createElements(info) {
         let h2 = document.createElement('h2');
         h2.innerHTML = info.matches[i].match + "% " + info.matches[i].characterName;
         let p = document.createElement('p');
-        p.innerHTML = "Hello world! This is some extra text";
+        let text = info.matches[i].nearMatches + " +-5% | Bonus: " + info.matches[i].bonus + "% | Avg Diff: " + info.matches[i].averageDifference + "%";
+        p.innerHTML = text;
         item.appendChild(h2);
         item.appendChild(p);
         list.appendChild(item);
