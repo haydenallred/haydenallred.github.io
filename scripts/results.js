@@ -47,7 +47,7 @@ function createElements(info) {
         let h2 = document.createElement('h2');
         h2.innerHTML = info.matches[i].match + "% " + info.matches[i].characterName;
         let p = document.createElement('p');
-        let text = info.matches[i].nearMatches + " +-7% | Bonus: " + info.matches[i].bonus + "% | Avg Diff: " + info.matches[i].averageDifference + "%";
+        let text = info.matches[i].nearMatches + " +-6% | Bonus: " + info.matches[i].bonus + "% | Avg Diff: " + info.matches[i].averageDifference + "%";
         p.innerHTML = text;
         item.appendChild(h2);
         item.appendChild(p);
@@ -65,6 +65,9 @@ function createElements(info) {
             //console.log(info.matches[i]);
             traitLi.innerHTML = traits[x].trait.toUpperCase() + ": user: " + info.percentiles[x] + " | character: " + info.matches[i].percentiles[x];
             traitLi.classList.add('details-li');
+            if (Math.abs(info.percentiles[x] - info.matches[i].percentiles[x]) <= 6) {
+                traitLi.classList.add('bold');
+            }
             traitUl.appendChild(traitLi);
         }
         details.appendChild(traitUl);
@@ -205,8 +208,8 @@ function runAnalysis(user, index) {
             difference = Math.round(difference * 100) / 100;
             totalDifference += difference;
 
-            if (difference <= 7) {
-                // add adjustment for being within 7%
+            if (difference <= 6) {
+                // add adjustment for being within 6%
                 let average = (cValue + uValue) / 2;
                 average = Math.round(average * 100) / 100;
 
