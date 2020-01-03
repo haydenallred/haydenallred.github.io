@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>DCQ Server Simulator</title>
+  <link rel="stylesheet" href="styles/server.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
+</head>
+<body>
+  
+  <br><br><br>
+
+  <p id="alert"></p>
+
+  <br><br><br>
+
+  <button id="button1" type="button" onclick="runResults()">
+    Create Percentile Rankings for Characters
+  </button>
+  <label>Delete Previous Responses?</label>
+  <label class="switch">
+    <input type="checkbox" id="delete-checkbox" checked="true">
+    <span class="slider round"></span>
+  </label>
+  <button id="button2" type="button" onclick="createBlankPercentileRankings()">
+    Create Blank Percentile Rankings Template
+  </button>
+  <button id="button3" type="button" onclick="getPersonalityTraitCounters()">
+    Create User Percentile Rankings
+  </button>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC9QKMq7eJGxcRC8C3a8hQ6Co4LRJ8N5W0",
+    authDomain: "character-quiz-ab120.firebaseapp.com",
+    databaseURL: "https://character-quiz-ab120.firebaseio.com",
+    projectId: "character-quiz-ab120",
+    storageBucket: "character-quiz-ab120.appspot.com",
+    messagingSenderId: "493184939030",
+    appId: "1:493184939030:web:4b2bbb6073a7ffd2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+  
+<script src="scripts/jQuery.js"></script>
+<script src="scripts/lodash.js"></script>
+<script  src="scripts/server.js"></script>
+  
+</body>
+</html>
