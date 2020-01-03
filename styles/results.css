@@ -41,6 +41,25 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.details {
+    display: flex;
+    height: 1450px;
+    padding-top: 35px;
+    background-color: rgb(174, 236, 174);
+    color: black;
+}
+
+.details-li {
+    height: 16px;
+    width: 98%;
+    font-size: x-large;
+    padding-left: 10px;
+    background-color: rgb(174, 236, 174);
+    margin-left: 10px;
+    color: black;
+    text-shadow: none;
+}
+
 .results {
     padding-left: none;
     width: 98%;
@@ -57,7 +76,7 @@ body {
 
 .select-css {
     display: block;
-    font-size: x-large;
+    font-size: xx-large;
     font-family: sans-serif;
     font-weight: 700;
     color: #444;

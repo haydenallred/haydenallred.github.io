@@ -8,12 +8,13 @@ var traits;
 var results = [];
 
 class matchDetails {
-    constructor(characterName, nearMatches, bonus, averageDifference, match) {
+    constructor(characterName, nearMatches, bonus, averageDifference, match, percentiles) {
         this.characterName = characterName;
         this.bonus = bonus;
         this.averageDifference = averageDifference;
         this.match = match;
         this.nearMatches = nearMatches;
+        this.percentiles = percentiles;
     }
 }
 
@@ -35,7 +36,13 @@ function createElements(info) {
     let section = document.createElement('section');
     let list = document.createElement('ul');
     for (let i = 0; i < info.matches.length; i++) {
+
+        let id = info.matches[i].characterName;
+        id = id.replace(/\s+/g, '');
+
         let item = document.createElement('li');
+        let clickEvent = "toggleDetails(" + id + ")";
+        item.setAttribute('onclick', clickEvent);
         let h2 = document.createElement('h2');
         h2.innerHTML = info.matches[i].match + "% " + info.matches[i].characterName;
         let p = document.createElement('p');
@@ -44,9 +51,39 @@ function createElements(info) {
         item.appendChild(h2);
         item.appendChild(p);
         list.appendChild(item);
+
+        let details = document.createElement('li');
+        details.classList.add("details");
+        details.style.display = "none";
+        
+        details.setAttribute('id', id);
+        let traitUl = document.createElement('ul');
+
+        for (let x = 0; x < traits.length; x++) {
+            let traitLi = document.createElement('li');
+            //console.log(info.matches[i]);
+            traitLi.innerHTML = traits[x].trait.toUpperCase() + ": user: " + info.percentiles[x] + " | character: " + info.matches[i].percentiles[x];
+            traitLi.classList.add('details-li');
+            traitUl.appendChild(traitLi);
+        }
+        details.appendChild(traitUl);
+        list.appendChild(details);
     }
     section.appendChild(list);
     resultsDiv.appendChild(section);
+}
+
+function toggleDetails(id) {
+    console.log(id.id);
+    let detail = document.getElementById(id.id);
+    if (detail.style.display == "none") {
+        detail.style.display = "flex";
+        //console.log("make see go");
+    } else {
+        detail.style.display = "none";
+        //console.log("make bye bye go");
+    }
+    console.log(detail);
 }
 
 function changeUser() {
@@ -187,7 +224,7 @@ function runAnalysis(user, index) {
         match = Math.round(match * 100) / 100;
         totalDifference = Math.round(totalDifference * 100) / 100;
 
-        let matchDetail = new matchDetails(character.name, nearTraits, nearBonus, totalDifference, match);
+        let matchDetail = new matchDetails(character.name, nearTraits, nearBonus, totalDifference, match, character.percentiles);
         currentResult.matches[i] = matchDetail;
 
         //console.log(differences);
