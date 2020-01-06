@@ -43,15 +43,18 @@ function chooseWinner(winner) {
   
   let rating1 = firstEloBefore;
   let rating2 = secondEloBefore;
-  let k = 25;
+  let k = 18;
   let newRating1 = rating1;
   let newRating2 = rating2;
   
-  let P1 = (1.0 / (1.0 + Math.pow(10, ((rating2 - rating1) / 400))));
-  let P2 = (1.0 / (1.0 + Math.pow(10, ((rating1 - rating2) / 400))));
-
+  //let P1 = (1.0 / (1.0 + Math.pow(10, ((rating2 - rating1) / 400))));
+  //let P2 = (1.0 / (1.0 + Math.pow(10, ((rating1 - rating2) / 400))));
+  let P1 = (1.0 / (1.0 + Math.pow(10, ((rating2 - rating1) / 45))));
+  let P2 = (1.0 / (1.0 + Math.pow(10, ((rating1 - rating2) / 45))));
   console.log("P1: " + P1);
   console.log("P2: " + P2);
+  //console.log("P1 600: " + pretendP1);
+  //console.log("P2 600: " + pretendP2);
   
   if (winner == 1) {
     // left movie wins
@@ -172,7 +175,7 @@ function chooseNewMatchup() {
   secondCharacter = null;
 
   let actuallyRandom = Math.floor(Math.random() * 5)
-  if (actuallyRandom < 4) {
+  if (actuallyRandom < 1) {
     // choose an actually random one
     currentTrait = Math.floor(Math.random() * 30);
     console.log("Actual random trait");
