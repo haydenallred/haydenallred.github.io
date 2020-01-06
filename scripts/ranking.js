@@ -175,6 +175,7 @@ function chooseNewMatchup() {
   secondCharacter = null;
 
   let actuallyRandom = Math.floor(Math.random() * 5)
+  console.log("Random: " + actuallyRandom);
   if (actuallyRandom < 1) {
     // choose an actually random one
     currentTrait = Math.floor(Math.random() * 30);
