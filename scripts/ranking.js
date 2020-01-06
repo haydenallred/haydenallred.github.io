@@ -69,7 +69,7 @@ function chooseWinner(winner) {
   } else if (winner == 0) {
     // tie
     console.log("It's a tie!");
-    k *= 5;
+    //k * 5;
     newRating1 = rating1 + k * (0.5 - P1);
     newRating2 = rating2 + k * (0.5 - P2);
   }
