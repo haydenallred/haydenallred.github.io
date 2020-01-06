@@ -50,6 +50,7 @@ function createElements(info) {
         let id = info.matches[i].characterName;
         id = id.replace(/\s+/g, '');
         id = id.replace(".", "");
+        id = id.replace("-", "");
 
         let item = document.createElement('li');
         let clickEvent = "toggleDetails(" + id + ")";
