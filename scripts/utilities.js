@@ -1,7 +1,7 @@
 
 
 
-var characters = [50];
+var characters = [];
 
 var sortedCharacters = {
   traits: []
@@ -37,7 +37,7 @@ function sortCharacters() {
   for (let i = 0; i < 30; i++) {
     let characterSort = _.clone(characters);
     characterSort.sort(function(a, b) {
-    return a.traits[i] - b.traits[i]; 
+    return a.traits[i] - b.traits[i];
   });
   characterSort.reverse();
   sortedCharacters.traits[i] = characterSort;
@@ -162,6 +162,7 @@ function createStaticReferenceOfCharacters() {
           ranks: doc.data().ranks,
           id: doc.id
         }; //doc.data();
+        //console.log(characters[index].name);
         index++;
       });
       db.collection("data").doc("temp-static-characters").set({
