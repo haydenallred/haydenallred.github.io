@@ -175,7 +175,23 @@ function loadResponses() {
         console.log("Minimums:");
         console.log(minimumsStrings);
         sortResults();
-        //console.log(results);
+        
+        // find out the average number of times each trait was modified
+        let timesModified = [];
+        for (let i = 0; i < 30; i++) {
+            timesModified[i] = 0;
+        }
+        for (let i = 0; i < responses.length; i++) {
+            for (let x = 0; x < 30; x++) {
+                timesModified[x] += responses[i].timesModified[x];
+            }
+        }
+        for (let i = 0; i < 30; i++) {
+            let averageTimesModified = timesModified[i] / responses.length;
+            averageTimesModified = Math.round(averageTimesModified * 100) / 100;
+            console.log(traits[i].trait + ": " + averageTimesModified);
+        }
+
     });
 }
 
