@@ -1,0 +1,1 @@
+document.querySelector('meta[property="og:description"]').setAttribute("content", "Hey, Javascript is working!");
