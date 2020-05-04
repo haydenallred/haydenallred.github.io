@@ -7,7 +7,18 @@
         <meta property="og:image" content="https://raw.githubusercontent.com/haydenallred/haydenallred.github.io/master/images/star-lord-main.jpg"/> 
     </head>
     <body>
-
+        <input type="button" onclick="postToFeed()" value="Share" />
+        <script>
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId            : '1588165978007976',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v6.0'
+              });
+            };
+          </script>
+          <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
         <script src="scripts/facebookSharing.js"></script>
     </body>
 </html>
