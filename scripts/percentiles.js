@@ -59,9 +59,9 @@ function createElements() {
         h2.setAttribute('id', traits.traits[i].trait);
         section.appendChild(h2);
 
-        let definition = document.createElement('p');
+        /*let definition = document.createElement('p');
         definition.textContent = traits.traits[i].definition;
-        section.appendChild(definition);
+        section.appendChild(definition);*/
 
         let p = document.createElement('p');
         let link = document.createElement('a');
@@ -72,16 +72,18 @@ function createElements() {
 
         let list = document.createElement('ul');
         for (let x = 0; x < pr[i].data.length; x++) {
-            let text = pr[i].data[x].name + ": " + pr[i].data[x].percentile;
+            //let text = pr[i].data[x].name + ": " + pr[i].data[x].percentile;
+            let text = pr[i].data[x].name;
             let item = document.createElement('li');
             item.innerHTML = text;
 
+            /*
             let textbox = document.createElement('input');
             textbox.setAttribute('type', 'text');
             textbox.setAttribute('name', traits.traits[i].trait + pr[i].data[x].name);
             textbox.setAttribute('id', traits.traits[i].trait + pr[i].data[x].name);
             textbox.setAttribute('placeholder', pr[i].data[x].elo);
-            item.appendChild(textbox);
+            item.appendChild(textbox); */
 
             //console.log(traits.traits[i].trait + ": " + pr[i].data[x].name + " (" + pr[i].data[x].elo + ")");
 
